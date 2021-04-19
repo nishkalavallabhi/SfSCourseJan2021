@@ -1,0 +1,272 @@
+\documentclass[11pt,a4paper]{article}
+
+% some more symbols
+\usepackage{textcomp}
+
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{natbib,multicol}
+\bibpunct[, ]{(}{)}{;}{a}{}{,}
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1ex}
+\addtolength{\oddsidemargin}{-7ex}
+\addtolength{\evensidemargin}{-7ex}
+\addtolength{\textwidth}{14ex}
+\addtolength{\topmargin}{-2\baselineskip}
+\addtolength{\textheight}{4\baselineskip}
+\usepackage[breaklinks,colorlinks,filecolor=blue,linkcolor=blue,urlcolor=blue,citecolor=red]{hyperref}% Ensure that we see the local urls that are in the bib file:
+%\newcommand{\localurl}[1]{ OSU local copy: \url{file:#1}}
+
+% \begin{htmlonly}
+% \renewcommand{\href}[2]{\htmladdnormallink{#1}{#2}}
+% \end{htmlonly}
+
+%begin{latexonly}
+%\renewcommand{\mylink}[2]{\href{#1}{#2}}
+
+\usepackage{url}
+%\usepackage[colorlinks,citecolor=blue,pdfpagemode=FullScreen]{hyperref}
+
+%\urlstyle{rm}
+%\def\UrlSpecials{\do\~{\mbox{\~{}}}\do_{\_}\do\%{}}
+
+%end{latexonly}
+
+
+
+% for regular paper output:
+%\hypersetup{}
+
+\usepackage{url}
+
+\begin{document}
+
+\begin{center}
+  \textbf{Seminar f\"ur Sprachwissenschaft, University of T\"ubingen\\[3ex]
+  {\Large NLP without a readymade annotated dataset}\\[3ex]
+  WS 2020/21 - Course Description Version 3
+}
+\end{center}
+
+\bigskip
+%\newpage
+\textbf{\large Instructor:}
+  Sowmya Vajjala
+  \begin{itemize}\vspace*{-.4\baselineskip}\itemsep-.4ex
+\item National Research Council, Canada
+  \item \textit{Email:} sowmya.vajjala@nrc-cnrc.gc.ca
+\end{itemize}
+
+\textbf{\large Course Overview:}
+Natural Language Processing (NLP) is a part of many day to day applications we use, such as search engines, virtual assistants on your smartphones and various functionalities in your email provider. When we think of NLP, we think of the various algorithms, neural network architectures, and so on. However, what drives all of them are large collections of annotated corpora. However, in many research and real-world scenarios, when we encounter a new problem which can be solved using NLP, we don't have such ready made datasets. This course gives you an overview of how to approach such scenarios - how to collect and cleanup the textual data, how to develop initial labeled datasets, and how to build first solutions from them. The course will cover both research and practical aspects. 
+
+\textbf{\large Learning Outcomes:} Upon successful completion of this course, students are expected to be able to know the following:
+\begin{itemize}
+\item Understand the end to end NLP system development pipeline
+\item Compile and explore labeled/annotated corpora for NLP
+\item Build some basic text classification and information extraction systems
+\end{itemize}
+
+\textbf{\large Pre-requisites:}
+\begin{enumerate}
+\item Intermediate proficiency in any programming language (Python preferred)
+\item Comfortable installing libraries etc on their laptops
+\item Knowledge of the usage of virtual environments (venv, anaconda) is useful
+\end{enumerate}
+
+\textbf{\large Meeting time:} 
+January 8 2021-January 29, 2021, M W F, 17:00 s.t. - 19:30 (Central European Time). 
+\paragraph{Dates: } (10 sessions in total)
+\begin{enumerate}
+    \item 8th Jan 2021 (Friday)
+    \item 11th, 13th, 15th Jan 2021 (Mon, Wed, Fri)
+    \item 18th, 20th, 22nd Jan 2021 (Mon, Wed, Fri)
+    \item 25th, 27th, 29th Jan 2021 (Mon, Wed, Fri)
+\end{enumerate}
+
+\textbf{\large Credits:}
+3 CP + 3 CP for the term paper
+
+\bigskip \textbf{Course Format } 
+We will meet 3 times in a week (2.5 hours/session). Primary mode of instruction is through online video lecture + discussion. Lecture slides for each session will be uploaded in advance and you are expected to read the recommended readings before listening to the lecture. Assignments will all be uploaded before the start of the course and are due on 1st March 2021. Term paper (if you write) is due on 1st March 2021 too.
+
+\bigskip\textbf{\large Resources/Reading Materials}
+Books: There is no single textbook. We will try to rely on publicly accessible resources for as much as possible.
+\begin{enumerate}
+\item "Speech and Language Processing" by Jurafsky and Martin (2nd Edition: \url{https://github.com/rain1024/slp2-pdf}. 3rd Edition: \url{https://web.stanford.edu/~jurafsky/slp3/})
+\item "Python for Everybody" Charles Severance \url{https://www.py4e.com/html3/} (For Python)
+\item "Practical Natural Language Processing" by Sowmya Vajjala, Bodhisattwa Majumder, Anuj Gupta and Harshit Surana. \url{https://www.amazon.de/Practical-Natural-Language-Processing-Pragmatic/dp/1492054054/}. The book is also available for free on O'Reilly's online learning platform (if your university is subscribed). A 30 day trial code to read the book online is here: \url{https://learning.oreilly.com/get-learning/?code=PNLP20}.
+\item NLTK book -\url{https://nltk.org/book}
+\end{enumerate}
+%acharyat padamadatte in first class
+
+\textbf{\large Course Website}: on Moodle, more details are announced later.
+
+\textbf{\large List of Topics (tentative)}
+
+Note: The following syllabus is tentative, and more detailed information along with relevant readings will be added by the time the course starts. 
+
+\begin{enumerate}
+\item \textbf{Introduction (1 session)}
+\begin{itemize}
+\item Course overview
+\item Introduction to NLP
+\item NLP system development pipeline
+\item [optional] Python Overview 
+\end{itemize}
+
+\paragraph{Readings: } (Note that you are not obligated to read everything thoroughly).
+\begin{itemize}
+\item Chapter 1 from "Speech and Language Processing" by Jurafsky and Martin, 2nd edition (available online) (SLP book from now on) 
+\item "Python for Everybody" by Charles Severence. \url{https://www.py4e.com/html3/} (Py4e from now on)
+\item Chapter 2 from "Practical Natural Language Processing" by Vajjala et.al. (PNLP book from now on)
+\end{itemize}
+
+\item \textbf{NLP Pipeline (1 Session)}
+\begin{itemize}
+\item Various steps in NLP system development process
+\item An example demonstrating the process 
+\end{itemize}
+Readings: Chapter 2 in "Practical Natural Language Processing"
+
+\item \textbf{Corpus collection, extraction, exploration (1 Session)}
+\begin{itemize}
+\item Collecting textual data from various sources (e.g., social media text, ethical issues etc)
+\item Reading text in different formats (e.g., pdf, html, text, doc etc)
+\item Corpus analysis (basic analysis - e.g., frequent words/phrases etc)
+\item Probing the corpus for linguistic phenomenon coverage
+\item Understanding bias in the corpus and other issues
+\item Basic visualization
+\end{itemize}
+Readings: Chapter 1-4 from "NLTK book" (\url{https://nltk.org/book}) 
+[Assignment 1 on this topic]
+
+\item \textbf{Automatically labeling data (2 sessions)} 
+\begin{enumerate}[label=1.\arabic*]
+\item Regular expressions: Overview
+\item Automatic labeling of data (with Snorkel)
+\item Data augmentation - an overview (with snorkel)
+\item Illustration of some NLP applications with such data (text classification, information extraction)
+\end{enumerate}
+Readings: Py4e, Chapter 11; Snorkel usecases (\url{https://www.snorkel.org/use-cases/}), A visual survey of data augmentation for NLP (\url{https://amitness.com/2020/05/data-augmentation-for-nlp/})
+[Assignment 2 on this topic]
+
+\item \textbf{Working with small datasets: transfer learning (1 session)}
+\begin{enumerate}
+    \item Different forms of neural embeddings
+    \item Using neural embeddings in NLP
+    \item Transfer learning with BERT
+\end{enumerate}
+
+\item \textbf{Student presentations (3 sessions)}
+Students can work in teams of 2-4 people and present one of the research papers related to course topics, from a given list of papers. Papers are listed at the end of this document. If you want to present a different paper, talk to me first. 
+
+\item Recap (1 session)
+\begin{itemize}
+\item Discussion on topics covered
+\item Review of exercises
+\item Resources for the future
+\end{itemize}
+
+\item Student term papers 
+\begin{itemize}
+\item Work on a short project involving NLP and write  a report describing your work (6-8 pages long in single column, latex formatted document)
+\item Some ideas are listed towards the end of this document. If you want to work on something else, talk to me first. 
+\end{itemize}
+\end{enumerate}
+
+\bigskip\textbf{\large Assignments/Grading} (for 6 CP)
+\begin{enumerate}
+\item 2 Assignments (30\% of the grade)
+\item 1 presentation (30\% of the grade)
+\item 1 term paper (30\% of the grade)
+\item classroom participation (10\% of the grade)
+\end{enumerate}
+
+\bigskip\textbf{\large Important Deadlines}
+\begin{enumerate}
+    \item Decide on a team for group discussion (13th Jan 2021)
+    \item Decide on a paper for group discussion (15th Jan 2021)
+    \item Group Discussions (22nd-27th Jan 2021)
+    \item Assignments 1 and 2 Submission (6th Feb 2021)
+    \item Decide on term paper topic (29th Jan 2021)
+    \item Term paper submission (13th Feb 2021)
+    
+\end{enumerate}
+\paragraph{Note: } All Assignments are due by 6th Feb 2021. Group Discussions are evaluated during class sessions. Term paper is due 2 weeks after the last class, i.e., 13th Feb 2021.
+
+
+\paragraph{Papers for Group Discussion: }  (Note: There is a lot of work in all these sub-divisions I made below. I just chose a few I know of. If you want to choose something else, let me know in advance!)
+\begin{itemize}
+
+\item \textbf{NLP pipeline}
+\begin{enumerate}
+\item Smith, N. A. (2020). Contextual word representations: putting words into computers. Communications of the ACM, 63(6), 66-74.
+\item Bernier-Colborne, G., \& Langlais, P. (2020, May). HardEval: Focusing on Challenging Tokens to Assess Robustness of NER. In Proceedings of The 12th Language Resources and Evaluation Conference (pp. 1704-1711).
+\item Srivastava, A., Makhija, P., \& Gupta, A. (2020, November). Noisy Text Data: Achilles’ Heel of BERT. In Proceedings of the Sixth Workshop on Noisy User-generated Text (W-NUT 2020) (pp. 16-21).
+\item Discussion of an existing software/casestudy: \url{https://eng.uber.com/cota/}
+\item Ribeiro, M. T., Wu, T., Guestrin, C., \& Singh, S. (2020). Beyond Accuracy: Behavioral Testing of NLP Models with CheckList. arXiv preprint arXiv:2005.04118.
+%add hardeval may be?
+\end{enumerate}
+
+\item \textbf{Corpus collection, Exploration}
+\begin{enumerate}
+\item Marcus, M., Santorini, B., \& Marcinkiewicz, M. A. (1993). Building a large annotated corpus of English: The Penn Treebank.
+\item Keung, P., Lu, Y., Szarvas, G., \& Smith, N. A. (2020, November). The Multilingual Amazon Reviews Corpus. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP) (pp. 4563-4568).
+\item Bustamante, G., Oncevay, A., \& Zariquiey, R. (2020, May). No data to crawl? monolingual corpus creation from PDF files of truly low-resource languages in Peru. In Proceedings of The 12th Language Resources and Evaluation Conference (pp. 2914-2923).
+\item Bender, E. M., \& Friedman, B. (2018). Data statements for natural language processing: Toward mitigating system bias and enabling better science. Transactions of the Association for Computational Linguistics, 6, 587-604.
+\item Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., \& Crawford, K. (2018). Datasheets for datasets. arXiv preprint arXiv:1803.09010.
+\end{enumerate}
+
+\item \textbf{Data Labeling and Augmentation}
+\begin{enumerate}
+     \item Ratner, A. J., Bach, S. H., Ehrenberg, H. R., \& Ré, C. (2017, May). Snorkel: Fast training set generation for information extraction. In Proceedings of the 2017 ACM international conference on management of data (pp. 1683-1686).
+    \item Wei, J., \& Zou, K. (2019, November). EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP) (pp. 6383-6389).
+    \item Amjad, M., Sidorov, G., \& Zhila, A. (2020, May). Data augmentation using machine translation for fake news detection in the Urdu language. In Proceedings of The 12th Language Resources and Evaluation Conference (pp. 2537-2542).
+    \item Chen, Y., Liu, S., Zhang, X., Liu, K., \& Zhao, J. (2017, July). Automatically labeled data generation for large scale event extraction. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) (pp. 409-419).
+    \item Tambi, R., Kale, A., \& King, T. H. (2020, May). Search Query Language Identification Using Weak Labeling. In Proceedings of The 12th Language Resources and Evaluation Conference (pp. 3520-3527).
+\end{enumerate}
+
+\item \textbf{NLP Research in under resourced scenarios}
+\begin{enumerate}
+    \item Rijhwani, S., Anastasopoulos, A., \& Neubig, G. (2020, November). OCR Post-Correction for Endangered Language Texts. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP) (pp. 5931-5942).
+    %\url{https://www.aclweb.org/anthology/2020.emnlp-main.478.pdf}
+    \item Chau, E. C., Lin, L. H., \& Smith, N. A. (2020). Parsing with multilingual bert, a small corpus, and a small treebank. arXiv preprint arXiv:2009.14124.
+    \item Zhang, B., Lu, D., Pan, X., Lin, Y., Abudukelimu, H., Ji, H., \& Knight, K. (2017, November). Embracing non-traditional linguistic resources for low-resource language name tagging. In Proceedings of the Eighth International Joint Conference on Natural Language Processing (Volume 1: Long Papers) (pp. 362-372).
+    \item Mehta, D., Santy, S., Mothilal, R. K., Srivastava, B. M. L., Sharma, A., Shukla, A., ... \& Bali, K. (2020). Learnings from Technological Interventions in a Low Resource Language: A Case-Study on Gondi. arXiv preprint arXiv:2004.10270.
+    \item Kakwani, D., Kunchukuttan, A., Golla, S., Gokul, N. C., Bhattacharyya, A., Khapra, M. M., \& Kumar, P. (2020, November). iNLPSuite: Monolingual Corpora, Evaluation Benchmarks and Pre-trained Multilingual Language Models for Indian Languages. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: Findings (pp. 4948-4961).
+\end{enumerate}
+
+\item \textbf{Other Topics in NLP}
+\begin{enumerate}
+\item Ribeiro, M. T., Singh, S., \& Guestrin, C. (2018, February). Anchors: High-Precision Model-Agnostic Explanations. In AAAI (Vol. 18, pp. 1527-1535).
+\item Lau, J. H., \& Baldwin, T. (2020, July). Give Me Convenience and Give Her Death: Who Should Decide What Uses of NLP are Appropriate, and on What Basis?. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (pp. 2908-2913).
+\item Loukina, A., Madnani, N., \& Zechner, K. (2019, August). The many dimensions of algorithmic fairness in educational applications. In Proceedings of the Fourteenth Workshop on Innovative Use of NLP for Building Educational Applications (pp. 1-10).
+\item Sanh, V., Debut, L., Chaumond, J., \& Wolf, T. (2019). DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter. arXiv preprint arXiv:1910.01108.
+\item Zhong, H., Xiao, C., Tu, C., Zhang, T., Liu, Z., \& Sun, M. (2020). How Does NLP Benefit Legal System: A Summary of Legal Artificial Intelligence. arXiv preprint arXiv:2004.12158.
+\end{enumerate}
+
+\end{itemize}
+Note: Presentation time is around 15 min per group, with 10-15 min more for discussion.
+
+\paragraph{Term paper ideas: }
+(You can choose to work on any other idea that interests you. Talk to me first to know whether it is a) feasible and b) relevant for this course)
+\begin{itemize}
+\item Pick a demo paper from any of the recent (2017-20) NLP conferences (ACL, EACL, EMNLP, NAACL, COLING) or any open source tool from NLP-OSS workshop series. Use the tool and write a report evaluating it for various use cases. 
+\item Use Snorkel for spam classification, in a language of your choice (e.g., German) and write a report on your observations about working with the tool, and its performance. You have to look for any relevant datasets yourselves.
+\end{itemize}
+Note: Any code you write should be submitted with the report. 
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
